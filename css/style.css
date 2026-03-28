@@ -108,8 +108,77 @@ section {
     font-size: 20px;
 }
 
-.link-hover:hover {
+.link-index:hover {
     color: #fedeca;
+}
+
+.more-info {
+    background: linear-gradient(180deg, #f6fbfc 0%, #ffffff 100%);
+}
+
+.more-info-hero {
+    background: linear-gradient(120deg, #20444a, #2f6872);
+    color: white;
+    padding: 30px;
+    border-radius: 14px;
+    margin-bottom: 28px;
+    box-shadow: rgba(38, 77, 84, 0.28) 0px 12px 30px;
+}
+
+.more-info-hero p {
+    text-indent: 0;
+    margin: 10px 0 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 20px 0 28px;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid #d5e7ea;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: rgba(100, 100, 111, 0.08) 0px 7px 22px 0px;
+}
+
+.info-card h3 {
+    font-size: 170%;
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    text-indent: 0;
+    margin: 0;
+}
+
+.info-block {
+    margin-top: 24px;
+    padding: 20px 22px;
+    background: #eef7f8;
+    border-left: 6px solid #2f6872;
+    border-radius: 8px;
+}
+
+.info-block h2 {
+    margin-bottom: 10px;
+}
+
+.info-block p {
+    text-indent: 0;
+    margin: 0 0 10px;
+}
+
+.info-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.info-list li {
+    margin-top: 8px;
 }
 
 .centered {
@@ -210,6 +279,14 @@ section {
 
   .vframe {
     height: 55vw;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .more-info-hero {
+    padding: 22px;
   }
 
   [class^="col-"] {

@@ -1,0 +1,40 @@
+:root {
+  --bg: #0f1218;
+  --card: #171b24;
+  --line: #252b39;
+  --text: #e5e9f0;
+  --muted: #8d95a7;
+  --accent: #ffd54a;
+}
+* { box-sizing: border-box; font-family: Inter, system-ui, sans-serif; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+.layout { display: grid; grid-template-columns: 280px 1fr 320px; min-height: 100vh; }
+.sidebar, .chat { background: #11151e; border-right: 1px solid var(--line); padding: 16px; }
+.chat { border-right: none; border-left: 1px solid var(--line); display: flex; flex-direction: column; }
+.content { padding: 18px; }
+.profile-box { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--card); display: grid; place-items: center; }
+.sidebar-actions { display: grid; gap: 8px; margin-bottom: 16px; }
+button { background: #252c3d; color: var(--text); border: 1px solid #3a4358; padding: 10px 12px; border-radius: 10px; cursor: pointer; }
+button.yellow { background: var(--accent); color: #111; border: none; font-weight: 700; }
+nav { display: grid; gap: 8px; }
+nav a { color: var(--text); text-decoration: none; padding: 8px 10px; border-radius: 8px; background: #151b27; }
+.tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+.tabs button.active { background: var(--accent); color: #000; border: none; }
+.game-card, .history { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 12px; }
+.meta { display: flex; gap: 16px; color: var(--muted); font-size: 14px; }
+.roulette { margin: 16px 0; height: 32px; background: #0d1118; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+#rouletteInner { height: 100%; width: 200%; background: repeating-linear-gradient(90deg, #2f80ed 0 12%, #eb5757 12% 24%, #27ae60 24% 36%, #9b51e0 36% 48%); animation: spin 3s linear infinite; }
+@keyframes spin { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+#playersList { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 6px; }
+#playersList li { display: flex; justify-content: space-between; padding: 8px; background: #121722; border-radius: 8px; }
+.bet-row, .chat-row { display: flex; gap: 8px; }
+input, select { width: 100%; background: #101521; color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+.messages { flex: 1; overflow-y: auto; display: grid; gap: 8px; margin-bottom: 8px; }
+.message { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 8px; }
+.auth-modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.75); display: grid; place-items: center; z-index: 10; }
+.auth-card { width: min(360px, 92vw); background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 10px; }
+.row { display: flex; gap: 8px; }
+.hidden { display: none !important; }
+@media (max-width: 1200px) { .layout { grid-template-columns: 240px 1fr; } .chat { grid-column: span 2; min-height: 300px; } }
+@media (max-width: 860px) { .layout { grid-template-columns: 1fr; } .sidebar, .chat { border: none; } }

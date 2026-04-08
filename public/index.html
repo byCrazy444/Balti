@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BetArena</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="authModal" class="auth-modal">
+    <div class="auth-card">
+      <h2>BetArena</h2>
+      <input id="username" placeholder="Логин" />
+      <input id="password" type="password" placeholder="Пароль" />
+      <div class="row">
+        <button id="loginBtn" class="yellow">Войти</button>
+        <button id="registerBtn">Регистрация</button>
+      </div>
+      <p id="authStatus"></p>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="profile-box">
+        <div id="avatar" class="avatar">🎮</div>
+        <div>
+          <div id="nickname">Гость</div>
+          <div id="balanceCoins">0 монет</div>
+          <div id="balanceMdl">0 MDL</div>
+        </div>
+      </div>
+      <div class="sidebar-actions">
+        <button class="yellow">Пополнить</button>
+        <button>Вывести</button>
+        <button>Промокод</button>
+      </div>
+      <nav>
+        <a href="#">Играть</a><a href="#">Профиль</a><a href="#">Перевод средств</a>
+        <a href="#">Бесплатные монеты</a><a href="#">Реферальная программа</a>
+        <a href="#">Топ игроков + приз</a><a href="#">Мои выплаты</a>
+        <a href="#">История выводов</a><a href="#">Промокод</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <div class="tabs">
+        <button data-game="jackpot" class="active">Jackpot</button>
+        <button data-game="battle">Battle Game</button>
+        <button data-game="fast">Fast Game</button>
+        <button data-game="duel">1vs1</button>
+      </div>
+
+      <section class="game-card">
+        <h3 id="gameTitle">Jackpot</h3>
+        <div class="meta">
+          <span id="gameId">ID: -</span>
+          <span id="gamePot">Банк: 0</span>
+          <span id="gameStatus">Статус: waiting</span>
+        </div>
+        <div class="roulette"><div id="rouletteInner"></div></div>
+        <ul id="playersList"></ul>
+        <div class="bet-row">
+          <input id="betAmount" type="number" min="1" placeholder="Сумма ставки (монеты)" />
+          <select id="battleSide"><option value="blue">Синие</option><option value="red">Красные</option></select>
+          <button id="betBtn" class="yellow">Сделать ставку</button>
+        </div>
+      </section>
+
+      <section class="history">
+        <h4>История игр</h4>
+        <div id="history"></div>
+      </section>
+    </main>
+
+    <aside class="chat">
+      <h3>Чат</h3>
+      <div id="chatMessages" class="messages"></div>
+      <div class="chat-row">
+        <input id="chatInput" placeholder="Напишите сообщение..." />
+        <button id="chatSend" class="yellow">Отправить</button>
+      </div>
+    </aside>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
